@@ -1,0 +1,39 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: tvshow
+  namespace: demo
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: tvshow
+  template:
+    metadata:
+      labels:
+        app: tvshow
+    spec:
+      containers:
+      - name: tvshow
+        image: vuhoang18/tvshow-demo:1.2
+        ports:
+        - containerPort: 3105
+        resources:
+          requests:
+            cpu: "100m"
+            memory: "128Mi"
+          limits:
+            cpu: "250m"
+            memory: "256Mi"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: tvshow
+  namespace: demo
+spec:
+  selector:
+    app: tvshow
+  ports:
+  - port: 3105
+    targetPort: 3105
