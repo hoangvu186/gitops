@@ -1,0 +1,19 @@
+apiVersion: monitoring.coreos.com/v1
+kind: PrometheusRule
+metadata:
+  name: test-alert
+  namespace: monitoring
+  labels:
+    release: kube-prometheus-stack
+spec:
+  groups:
+  - name: test
+    rules:
+    - alert: TestAlert
+      expr: vector(1)
+      for: 1m
+      labels:
+        severity: critical
+      annotations:
+        summary: Test Alert
+        description: Testing email notification
