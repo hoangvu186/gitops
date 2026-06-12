@@ -3,6 +3,7 @@ on:
   pull_request:
     paths:
       - "k8s/**"
+      - "k8s-api/**"
 
 jobs:
   validate:
