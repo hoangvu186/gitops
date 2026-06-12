@@ -23,7 +23,7 @@ spec:
               smtp_smarthost: 'smtp.gmail.com:587'
               smtp_from: 'vvuhoangg186@gmail.com'
               smtp_auth_username: 'vvuhoangg186@gmail.com'
-              smtp_auth_password: 'APP_PASSWORD'
+              smtp_auth_password: 'mmfm bbrj jszg wiwb'
               smtp_require_tls: true
 
         route:
